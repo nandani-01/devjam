@@ -1,0 +1,126 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins' , sans-serif;
+    box-sizing: border-box;
+}
+.container{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+.container::before{
+    content:"";
+    background-image: url('/devjam/icons/expenses.jpg');
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity:0.4;
+}
+.form-box{
+    width: 100%;
+    max-width: 450px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: #fff;
+    padding: 60px 70px 80px;
+    text-align: center;
+}
+
+.form-box h1{
+    font-size: 30px;
+    color: #f10e0e;
+    position: relative;
+    vertical-align: text-top;
+}
+.form-box h1::after{
+    content: '';
+    width: 30px;
+    height: 4px;
+    border-radius: 3px;
+
+    background: #f00521;
+    position: absolute;
+    bottom : -12px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.join a{
+    padding: 15px 35px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    color: rgb(255, 0, 0);
+    border: 1px solid rgb(16, 16, 16);
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size: 18px;
+}
+
+
+.input-field{
+    border: #eaeaea;
+    margin: 40px 0;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    max-height: 30px;
+    transition: max-height 0.5s;
+    overflow: hidden;
+}
+input{
+    width: 100%;
+    background: transparent;
+    border: 0;
+    outline: 0;
+    padding: 18px 15px;
+}
+.input-field i{
+    margin-left: 15px;
+    color: #999;
+}
+form p{
+    text-align: left;
+    font-size: 15px;
+}
+form p a{
+    text-decoration: none;
+    color: #3c00a0;
+}
+.or{
+    text-align: center;
+    font-size: 15px;
+}
+.btn-field{
+    width:100%;
+    display: flex ;
+    justify-content: space-between;
+}
+.btn-field button{
+    flex-basis: 90%;
+    background:#f3062a;
+    color:#fff;
+    height: 60px;
+    border-radius:40px;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    transition: background 1s;
+    font-size: 20px;
+}
+
+.input-group{
+    height: 280px;
+}
+.btn-field button.disable{
+    background: #eaeaea;
+    color: #555;
+}
+
