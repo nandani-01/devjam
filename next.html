@@ -5,20 +5,61 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel ="stylesheet" href = "style.css"/>
+    <link rel ="stylesheet" href = "nextstyle.css"/>
 </head>
 <body>
-    <div class="background">
-        <div>
-             <p class ="heading">KHARCHA PAANI</p>
+    <nav>
+        <div class="header">
+            <p>KHARCHA PAANI</p>
         </div>
-        <div class ="none">
-            <ul>
-                <li> <a href="/devjam/create.html">Create a room</a></li>
-                <li> <a href="/devjam/join.html">Join a room</a></li>
-                <li> <a href="/devjam/ownexpenses/first.html">My expenses</a></li>
-            </ul>
+
+        <ul>
+            <li> <a href="/devjam/create.html">Create a room</a></li>
+            <li> <a href="/devjam/join.html">Join a room</a></li>
+            <li> <a href="/devjam/ownexpenses/first.html">My expenses</a></li>
+            <img src="/devjam/icons/profile.png" class="user-pic" onclick="toggleMenu()">
+        </ul>
+        
+        <div class="sub-menu-wrap" id="subMenu">
+            <div class="sub-menu">
+                <a href="#" class="sub-menu-link">
+                    <p>Edit Profile</p>
+                    <span>></span>
+                </a>
+                <a href="#" class="sub-menu-link">
+                    <p>Settings & Privacy</p>
+                    <span>></span>
+                </a>
+                <a href="#" class="sub-menu-link">
+                    <p>Log Out</p>
+                    <span>></span>
+                </a>
+            </div>
         </div>
-    </div>   
+    </nav>
+    <div class="bg-image">
+        <img src="/devjam/icons/images.jpg">
+        <div class="image-text">
+            <h3>THIS IS A GOO</h3>
+
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="lower">
+          <div class="about">
+            <br>
+            <h3>ABOUT US</h3><br>
+            <p>Kharcha paani is a complete online money management platform designed to keep track of all your transactions.It also helps to splitting your bills.</p>
+          <br>
+          </div>
+        </div>
+    </footer>
+    <script>
+        let subMenu =document.getElementById("subMenu");
+        
+        function toggleMenu(){
+            subMenu.classList.toggle("open-menu");
+        }
+    </script>
 </body>
 </html>
