@@ -1,22 +1,40 @@
-<h1>Sign up Below</h1>
-<style>
-    h5{
-        color: red
-    }
-</style>
-{% for message in messages %}
-<h5>{{message}}</h5>
-{% endfor%}
-<form method = "POST" action = "register">
-    {% csrf_token %}
-    <p>Username:</p>
-    <input type="text" name = "username"/>
-    <p>Email:</p>
-    <input type="email" name = "email"/>
-    <p>Password:</p>
-    <input type="password" name = "password"/>
-    <p>Repeat Password:</p>
-    <input type="password" name = "password2"/><br>
-    <input type = "submit"/>
-
-</form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>register</title>
+    <link rel ="stylesheet" href = "style.css"/>
+</head>
+<body>
+    <div class ="container">
+        <div class ="form-box">
+            <h1 id="title">Sign up</h1>
+            <form >
+                <div class = "input-group">
+                    <div class = "input-field" id ="nameField">
+                        <lable for="text" class="name">Name:</lable>
+                        <input type ="text" placeholder ="Name">
+                    </div>
+                    <div class ="input-field">
+                        <lable for="text" class="email">Email:</lable>
+                        <input type ="email" placeholder ="Email">
+                    </div>
+                    <div class ="input-field">
+                        <lable for="text" class="password">Password:</lable>
+                        <input type ="password" placeholder ="Password">
+                    </div>
+                    <div class ="input-field">
+                        <lable for="text" class="repassword">Confirm Password:</lable>
+                        <input type ="repassword" placeholder ="Re-type Password">
+                    </div>
+                    <div class="submit">
+                        <a href ="/devjam/next.html">SUBMIT</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
