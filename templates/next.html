@@ -1,0 +1,67 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel ="stylesheet" href = "{% static 'nextstyle.css' %}"/>
+</head>
+<body>
+    <nav>
+        <div class="header">
+            <p>KHARCHA PAANI</p>
+        </div>
+
+        <ul>
+            <li> <a href="create.html">Create a room</a></li>
+            <li> <a href="join.html">Join a room</a></li>
+            <li> <a href="{% url 'first' %}">My expenses</a></li>
+            <img src="expenses.jpg" class="user-pic" onclick="toggleMenu()">
+        </ul>
+        
+        <div class="sub-menu-wrap" id="subMenu">
+            <div class="sub-menu">
+                <a href="#" class="sub-menu-link">
+                    <p>Edit Profile</p>
+                    <span>></span>
+                </a>
+                <a href="#" class="sub-menu-link">
+                    <p>Settings & Privacy</p>
+                    <span>></span>
+                </a>
+                <a href="#" class="sub-menu-link">
+                    <p>Log Out</p>
+                    <span>></span>
+                </a>
+            </div>
+        </div>
+    </nav>
+    <div class="bg-image">
+        <img src="expenses.jpg">
+        <div class="image-text">
+            <h3>THIS IS A GOO</h3>
+
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="lower">
+          <div class="about">
+            <br>
+            <h3>ABOUT US</h3><br>
+            <p>Kharcha paani is a complete online money management platform designed to keep track of all your transactions.It also helps to splitting your bills.</p>
+          <br>
+          </div>
+        </div>
+    </footer>
+    <script>
+        let subMenu =document.getElementById("subMenu");
+        
+        function toggleMenu(){
+            subMenu.classList.toggle("open-menu");
+        }
+    </script>
+</body>
+</html>

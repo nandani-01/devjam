@@ -1,0 +1,79 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KHARCHA PAANI</title>
+    <link rel ="stylesheet" href = "{% static 'style.css' %}"/>
+</head>
+
+<body>
+    
+    <div class ="container">
+        
+        <div class ="form-box">
+            <h1 id="title">Sign up</h1>
+            <style>
+                h5{
+                    color: red
+                }
+            </style>
+            {% for message in messages %}
+                <div class="alert alert-{{ message.tags }}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        
+            <form method ="POST" action="{% url 'register' %}">
+                {% csrf_token %}
+             
+                <div class = "input-group">
+                    <div class = "input-field" id ="nameField">
+                        <input type ="text" name = "username" placeholder ="username">
+                    </div>
+                    <div class ="input-field">
+                        <input type ="email" name = "email" placeholder ="email">
+                    </div> 
+                    <div class ="input-field">
+                        <input type ="password" name = "password" placeholder ="password">
+                    </div>
+                    <p>Forgot password?<a href= "#">click here!</a></p>
+                    <br><hr>
+                    <p class ="or">OR</p>
+                </div>
+                <div class="join">
+                    <a href ="{% url 'next' %}">Join as a guest</a>
+                    <br>
+                </div>
+                <div class="btn-field">
+                    <button type="submit" id="signupBtn" value="SignUp">Sign up</button>
+                    <button type="submit" id="signinBtn" value="SignIn" class="disable">Sign in</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+<script>
+    
+    let signupBtn = document.getElementById("signupBtn");
+    let signinBtn = document.getElementById("signinBtn");
+    let nameField = document.getElementById("nameField");
+    let title = document.getElementById("title");
+
+signinBtn.onclick =function(){
+        nameField.style.maxHeight ="0";
+        title.innerHTML = "Sign In";
+        signupBtn.classList.add("disable");
+        signinBtn.classList.remove("disable");
+    }
+signupBtn.onclick =function(){
+        nameField.style.maxHeight = "60px";
+        title.innerHTML = "Sign up";
+        signupBtn.classList.remove("disable");
+        signinBtn.classList.add("disable");
+    }
+</script>
+</body>
+</html>
