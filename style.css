@@ -34,6 +34,16 @@
     padding: 60px 70px 80px;
     text-align: center;
 }
+a{
+    padding: 15px 35px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    color: rgb(255, 0, 0);
+    border: 1px solid rgb(16, 16, 16);
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size: 18px;
+} 
 
 .form-box h1{
     font-size: 30px;
@@ -123,4 +133,43 @@ form p a{
     background: #eaeaea;
     color: #555;
 }
+.main-box{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+.main-box::before{
+    content:"";
+    background-image: url('/devjam/icons/expenses.jpg');
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity:0.4;
+}
+.box{
+    width: 100%;
+    max-width: 450px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: #fff;
+    padding: 60px 70px 80px;
+    text-align: center;
+}
+.box i{
+    margin-left: 15px;
+    color: #999;
+    cursor:pointer;
+}
+lable.repassword{
+    color:rgb(6, 6, 6);
+    width:100%;
+} 
 
