@@ -92,12 +92,6 @@ nav li a:hover{
     background-size:cover;
     background-position:center;
 }
-.bg-image h3{
-    color:black;
-    text-align:left;
-    position:absolute;
-    top:13%;
-}
 .footer{
     background-color:#333434;
 }
