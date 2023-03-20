@@ -18,10 +18,20 @@
         </div>
 
         <ul>
+            <style>
+                #msg{
+                    font-size: 17px;
+                    color:rgb(241, 238, 38); 
+                    margin-right: 20px;
+                }
+            </style>
             <li> <a href="create.html">Create a room</a></li>
             <li> <a href="join.html">Join a room</a></li>
             <li> <a href="{% url 'first' %}">My expenses</a></li>
             <img src="expenses.jpg" class="user-pic" onclick="toggleMenu()">
+            <li>
+                <span id="msg">{{request.user}}</span>
+            </li>
         </ul>
         
         <div class="sub-menu-wrap" id="subMenu">
@@ -34,7 +44,7 @@
                     <p>Settings & Privacy</p>
                     <span>></span>
                 </a>
-                <a href="#" class="sub-menu-link">
+                <a href="{% url 'logout' %}" class="sub-menu-link">
                     <p>Log Out</p>
                     <span>></span>
                 </a>
