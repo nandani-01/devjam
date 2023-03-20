@@ -1,16 +1,46 @@
-<h1>Login Now</h1>
-<style>
-    h3{
-        color: red
-    }
-</style>
-{% for message in messages %}
-<h3>{{message}}</h3>
-{% endfor%}
-<form action="logic" method="POST">
-    <p>Email:</p>
-    <input type="email" name = "email"/>
-    <p>Password:</p>
-    <input type="password" name = "password"/>
-    <input type="submit"/>
-</form>
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>register</title>
+    <link rel ="stylesheet" href = '{% static "style.css" %}'>
+</head>
+<body>
+    <div class ="container">
+        <div class ="login-box">
+            <h1 id="title">Login to Continue</h1>
+            <style>
+                h5{
+                    color: red
+                }
+            </style>
+            <br>
+            {% for message in messages %}
+                <div class="alert alert-{{ message.tags }}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+            <form method = "POST" action = "login">
+                {% csrf_token %}
+                <div class = "input-group">
+                    <div class = "input-field" id ="nameField">
+                        <lable for="text" class="name">Name:</lable>
+                        <input type ="text" name="name" placeholder ="Name">
+                    </div>
+                    <div class ="input-field">
+                        <lable for="text" class="password">Password:</lable>
+                        <input type ="password" name="password" placeholder ="Password">
+                    </div>
+                    <div class="btn-field">
+                        <button type ="submit" id="submit" class="submit">Log In</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
