@@ -1,0 +1,90 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href='{% static "editstyle.css" %}' />
+</head>
+<body>
+    <nav>
+        <div class="header">
+            <p>KHARCHA PAANI</p>
+        </div>
+
+        <ul>
+            <style>
+                #msg{
+                    font-size: 17px;
+                    color:rgb(241, 238, 38); 
+                    margin-right: 20px;
+                }
+            </style>
+            <li> <a href="create.html">Create a room</a></li>
+            <li> <a href="join.html">Join a room</a></li>
+            <li> <a href="{% url 'first' %}">My expenses</a></li>
+            <img src='{% static "profile.jpg" %}' class="user-pic" onclick="toggleMenu()">
+            <li>
+                <span id="msg">{{request.user}}</span>
+            </li>
+        </ul>
+        
+        <div class="sub-menu-wrap" id="subMenu">
+            <div class="sub-menu">
+                <a href="{% url 'edit' %}" class="sub-menu-link">
+                    <p>Edit Profile</p>
+                    <span>></span>
+                </a>
+                <a href="#" class="sub-menu-link">
+                    <p>Settings & Privacy</p>
+                    <span>></span>
+                </a>
+                <a href="{% url 'logout' %}" class="sub-menu-link">
+                    <p>Log Out</p>
+                    <span>></span>
+                </a>
+            </div>
+        </div>
+    </nav>
+    <div class="bg-image">
+        <img src='{% static "images.jpg" %}'>
+
+    </div>
+    <div class="main-box">
+        <div class="form-box">
+            <form>
+                <h3>Edit Profile</h3>
+                <div class = "input-group">
+                    <div class = "input-field" id ="nameField">
+                        <lable for="text" class="name">Name:</lable>
+                        <input type ="text" placeholder ="Name">
+                    </div>
+                    <div class ="input-field">
+                        <lable for="email" class="email">Email:</lable>
+                        <input type ="email" placeholder ="Email">
+                    </div>
+                    <div class ="input-field">
+                        <lable for="password" class="password">Change password:</lable>
+                        <input type ="password" placeholder ="Password">
+                    </div>
+                    <div class ="input-field">
+                        <lable for="repassword" class="repassword">Confirm password:</lable>
+                        <input type ="password" placeholder ="Confirm Password">
+                    </div>
+                    <div class="btn-field">
+                        <button type="Submit" id="done">DONE</button>
+                    </div>
+            </form>
+        </div>
+    </div>
+    <script>
+        let subMenu =document.getElementById("subMenu");
+        
+        function toggleMenu(){
+            subMenu.classList.toggle("open-menu");
+        }
+    </script>
+</body>
+</html>
