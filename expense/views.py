@@ -58,4 +58,6 @@ def loginpage(request):
             return redirect('login')
     else:
         return render(request, 'login.html')
-
+def logoutuser(request):
+    logout(request)
+    return redirect('login')
